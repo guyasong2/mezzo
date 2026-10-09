@@ -19,11 +19,19 @@ const generateTimeSlots = () => {
 export default async function BookPage() {
   const supabase = await createClient();
 
-  const { data: packages } = await supabase
+  const { data: packages, error: packagesError } = await supabase
     .from("pricing_packages")
     .select("*")
     .eq("active", true)
     .order("sort_order");
+
+  if (packagesError) {
+    console.error("[Book] Failed to fetch packages:", JSON.stringify(packagesError));
+    console.error("[Book] Supabase URL configured:", !!process.env.NEXT_PUBLIC_SUPABASE_URL);
+    console.error("[Book] Supabase anon key configured:", !!process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
+  } else {
+    console.log("[Book] Fetched", packages?.length ?? 0, "active packages");
+  }
 
   const { data: blockedDatesData } = await supabase
     .from("blocked_dates")

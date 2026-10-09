@@ -78,7 +78,8 @@ export function BookingForm({
       });
 
       if (!response.ok) {
-        throw new Error("Booking failed");
+        const errorData = await response.json().catch(() => null);
+        throw new Error(errorData?.error || "Booking failed");
       }
 
       toast.success("Booking request submitted successfully!", {
@@ -89,8 +90,9 @@ export function BookingForm({
         window.location.href = "/";
       }, 2000);
     } catch (error) {
+      const message = error instanceof Error ? error.message : "Please try again or contact us directly.";
       toast.error("Failed to submit booking", {
-        description: "Please try again or contact us directly.",
+        description: message,
       });
     } finally {
       setIsSubmitting(false);

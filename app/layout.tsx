@@ -48,12 +48,21 @@ export const metadata: Metadata = {
     description:
       "Premium photography services in Texas. Capturing moments, creating memories.",
     siteName: "Steve Mezzo Images",
+    images: [
+      {
+        url: "/logo-original.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Steve Mezzo Images - Professional Photography in Texas",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Steve Mezzo Images | Professional Photography in Texas",
     description:
       "Premium photography services in Texas. Capturing moments, creating memories.",
+    images: ["/logo-original.jpg"],
   },
   robots: {
     index: true,

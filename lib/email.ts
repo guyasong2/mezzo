@@ -26,9 +26,13 @@ async function getResend() {
 
 export async function sendBookingNotification(data: BookingEmailData) {
   const resend = await getResend();
-  await resend.emails.send({
-    from: `Steve Mezzo Images <${process.env.RESEND_FROM_EMAIL || "noreply@stevemezzoimages.com"}>`,
-    to: BUSINESS_EMAIL,
+  const fromEmail = process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev";
+  const toEmail = process.env.BUSINESS_NOTIFICATION_EMAIL || BUSINESS_EMAIL;
+  console.log("[Email] Sending booking notification to:", toEmail, "from:", fromEmail);
+  console.log("[Email] API key present:", !!process.env.RESEND_API_KEY);
+  const { data: result, error } = await resend.emails.send({
+    from: `Steve Mezzo Images <${fromEmail}>`,
+    to: toEmail,
     subject: `New Booking: ${data.packageName} - ${data.clientName}`,
     html: `
       <h2>New Booking Request</h2>
@@ -44,13 +48,23 @@ export async function sendBookingNotification(data: BookingEmailData) {
       </table>
     `,
   });
+  if (error) {
+    console.error("[Email] Booking email FAILED:", JSON.stringify(error));
+    throw new Error(`Email send failed: ${error.message}`);
+  }
+  console.log("[Email] Booking email sent successfully, id:", result?.id);
+  return { data: result, error };
 }
 
 export async function sendContactNotification(data: ContactEmailData) {
   const resend = await getResend();
-  await resend.emails.send({
-    from: `Steve Mezzo Images <${process.env.RESEND_FROM_EMAIL || "noreply@stevemezzoimages.com"}>`,
-    to: BUSINESS_EMAIL,
+  const fromEmail = process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev";
+  const toEmail = process.env.BUSINESS_NOTIFICATION_EMAIL || BUSINESS_EMAIL;
+  console.log("[Email] Sending contact notification to:", toEmail, "from:", fromEmail);
+  console.log("[Email] API key present:", !!process.env.RESEND_API_KEY);
+  const { data: result, error } = await resend.emails.send({
+    from: `Steve Mezzo Images <${fromEmail}>`,
+    to: toEmail,
     replyTo: data.email,
     subject: `Contact Form: ${data.subject}`,
     html: `
@@ -65,4 +79,10 @@ export async function sendContactNotification(data: ContactEmailData) {
       <p style="white-space:pre-wrap">${data.message}</p>
     `,
   });
+  if (error) {
+    console.error("[Email] Contact email FAILED:", JSON.stringify(error));
+    throw new Error(`Email send failed: ${error.message}`);
+  }
+  console.log("[Email] Contact email sent successfully, id:", result?.id);
+  return { data: result, error };
 }
