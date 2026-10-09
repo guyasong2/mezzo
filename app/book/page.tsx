@@ -3,6 +3,8 @@ import { Footer } from "@/components/layout/footer";
 import { BookingForm } from "@/components/booking/booking-form";
 import { createClient } from "@/lib/supabase/server";
 
+export const dynamic = "force-dynamic";
+
 export const metadata = {
   title: "Book a Session",
   description: "Schedule your photography session with our easy booking system.",

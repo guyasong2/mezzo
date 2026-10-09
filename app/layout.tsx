@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next"
 import { Toaster } from "sonner";
 
 const inter = Inter({
@@ -48,21 +49,12 @@ export const metadata: Metadata = {
     description:
       "Premium photography services in Texas. Capturing moments, creating memories.",
     siteName: "Steve Mezzo Images",
-    images: [
-      {
-        url: "/logo-original.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Steve Mezzo Images - Professional Photography in Texas",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Steve Mezzo Images | Professional Photography in Texas",
     description:
       "Premium photography services in Texas. Capturing moments, creating memories.",
-    images: ["/logo-original.jpg"],
   },
   robots: {
     index: true,
@@ -95,6 +87,7 @@ export default function RootLayout({
       <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
         {children}
         <Toaster position="top-right" richColors />
+        <Analytics/>
       </body>
     </html>
   );

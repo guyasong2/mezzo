@@ -16,9 +16,10 @@ export function middleware(request: NextRequest) {
     const allowedOrigins = [
       process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
       'https://stevemezzoimages.com',
+      'http://localhost:3000',
     ]
 
-    if (origin && allowedOrigins.includes(origin)) {
+    if (origin && (allowedOrigins.includes(origin) || origin.endsWith('.vercel.app'))) {
       response.headers.set('Access-Control-Allow-Origin', origin)
       response.headers.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
       response.headers.set('Access-Control-Allow-Headers', 'Content-Type, Authorization')
