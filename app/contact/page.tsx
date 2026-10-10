@@ -127,7 +127,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <div className="font-medium mb-1 text-sm sm:text-base">Location</div>
-                      <div className="text-gray-600 text-sm sm:text-base">Texas, USA</div>
+                      <div className="text-gray-600 text-sm sm:text-base">Killeen, Texas</div>
                     </div>
                   </div>
                 </div>
@@ -136,16 +136,8 @@ export default function ContactPage() {
                   <div className="font-medium mb-3 sm:mb-4 text-sm sm:text-base">Business Hours</div>
                   <div className="space-y-2 text-gray-600 text-sm sm:text-base">
                     <div className="flex justify-between">
-                      <span>Monday - Friday</span>
-                      <span>9:00 AM - 5:00 PM</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Saturday</span>
-                      <span>By Appointment</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Sunday</span>
-                      <span>Closed</span>
+                      <span>Monday - Sunday</span>
+                      <span>By Appointment Only</span>
                     </div>
                   </div>
                 </div>

@@ -43,7 +43,7 @@ export function Footer() {
               </div>
               <div className="flex items-center gap-3">
                 <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-[#D4AF37] flex-shrink-0" />
-                <span>Texas, USA</span>
+                <span>Killeen, Texas</span>
               </div>
             </div>
           </div>
@@ -88,7 +88,7 @@ export function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 sm:gap-6">
             <div className="flex gap-5 sm:gap-6">
               <a
-                href="https://instagram.com/stevemezzoimages"
+                href="https://www.instagram.com/stevemezzo"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-[#D4AF37] transition-colors duration-200 touch-manipulation"
@@ -99,7 +99,7 @@ export function Footer() {
                 </svg>
               </a>
               <a
-                href="https://facebook.com/stevemezzoimages"
+                href="https://www.facebook.com/motion24studios"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-[#D4AF37] transition-colors duration-200 touch-manipulation"

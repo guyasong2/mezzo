@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 
 export const runtime = "nodejs";
-export const alt = "Steve Mezzo Images - Professional Photography in Texas";
+export const alt = "Steve Mezzo Images - Professional Photography in Killeen, Texas";
 export const size = {
   width: 1200,
   height: 630,
@@ -68,7 +68,7 @@ export default async function Image() {
               fontWeight: 400,
             }}
           >
-            Professional Photography in Texas
+            Professional Photography in Killeen, Texas
           </div>
           <div
             style={{
@@ -83,6 +83,14 @@ export default async function Image() {
               fontSize: 22,
               color: "#999999",
               marginTop: 4,
+            }}
+          >
+            Killeen, Texas
+          </div>
+          <div
+            style={{
+              fontSize: 22,
+              color: "#999999",
             }}
           >
             Portraits · Weddings · Events · Commercial

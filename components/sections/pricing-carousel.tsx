@@ -107,10 +107,10 @@ export function PricingCarousel() {
         <div className="text-center mb-12 sm:mb-16 lg:mb-20 fade-in-up">
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 sm:mb-4">
             Our
-            <span className="block text-[#D4AF37]">Services</span>
+            <span className="block text-[#D4AF37]">Packages</span>
           </h2>
           <p className="text-base sm:text-lg lg:text-xl text-gray-400 max-w-2xl mx-auto px-4">
-            Choose the service that best fits your vision
+            Choose the package that best fits your vision
           </p>
         </div>
 
@@ -119,14 +119,14 @@ export function PricingCarousel() {
           {/* Navigation Arrows */}
           <button
             onClick={goToPrevious}
-            className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 z-10 p-3 lg:p-4 bg-white/5 hover:bg-white/10 backdrop-blur-sm transition-all duration-300 -translate-x-4 lg:-translate-x-6 touch-manipulation"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 sm:p-3 lg:p-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm transition-all duration-300 touch-manipulation"
             aria-label="Previous package"
           >
             <ChevronLeft className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
           </button>
           <button
             onClick={goToNext}
-            className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 z-10 p-3 lg:p-4 bg-white/5 hover:bg-white/10 backdrop-blur-sm transition-all duration-300 translate-x-4 lg:translate-x-6 touch-manipulation"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 sm:p-3 lg:p-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm transition-all duration-300 touch-manipulation"
             aria-label="Next package"
           >
             <ChevronRight className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
