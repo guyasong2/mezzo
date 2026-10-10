@@ -3,14 +3,14 @@ import { Mail, Phone, MapPin } from "lucide-react";
 
 const footerSections = {
   services: [
-    { name: "Portraits", href: "/work?category=portraits" },
-    { name: "Weddings", href: "/work?category=weddings" },
-    { name: "Events", href: "/work?category=events" },
-    { name: "Fashion", href: "/work?category=fashion" },
+    { name: "Portraits", href: "/gallery?category=portraits" },
+    { name: "Weddings", href: "/gallery?category=weddings" },
+    { name: "Events", href: "/gallery?category=events" },
+    { name: "Fashion", href: "/gallery?category=fashion" },
   ],
   company: [
     { name: "About", href: "/about" },
-    { name: "Portfolio", href: "/work" },
+    { name: "Portfolio", href: "/gallery" },
     { name: "Pricing", href: "/pricing" },
     { name: "Contact", href: "/contact" },
   ],

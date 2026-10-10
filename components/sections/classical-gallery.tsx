@@ -41,7 +41,7 @@ export function ClassicalGallery() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10 sm:mb-12 lg:mb-16 fade-in-up">
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black mb-3 sm:mb-4">
-            Featured <span className="text-[#D4AF37]">Work</span>
+            Featured <span className="text-[#D4AF37]">Gallery</span>
           </h2>
           <p className="text-sm sm:text-base lg:text-lg text-gray-600 max-w-2xl mx-auto px-4">
             A curated selection of our finest photography showcasing memorable moments and timeless elegance
@@ -73,7 +73,7 @@ export function ClassicalGallery() {
 
         <div className="text-center mt-8 sm:mt-10 lg:mt-12 fade-in-up" style={{ animationDelay: '0.4s' }}>
           <a
-            href="/work"
+            href="/gallery"
             className="inline-block px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base bg-black text-white font-semibold hover:bg-[#D4AF37] hover:text-black transition-all duration-300 touch-manipulation"
           >
             View Full Gallery

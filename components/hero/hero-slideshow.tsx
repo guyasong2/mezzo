@@ -34,7 +34,7 @@ export function HeroSlideshow() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
             <a
-              href="/work"
+              href="/gallery"
               className="px-6 sm:px-8 py-3 sm:py-4 bg-[#D4AF37] text-black font-semibold hover:bg-[#B8941F] transition-all duration-300 transform hover:scale-105 text-sm sm:text-base"
             >
               View Portfolio
