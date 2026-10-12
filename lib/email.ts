@@ -1,4 +1,8 @@
-const BUSINESS_EMAIL = "info@stevemezzoimages.com";
+const NOTIFICATION_EMAILS = [
+  "tebahstephen38@gmail.com",
+  "guyasong1@gmail.com",
+  "info@stevemezzoimages.com",
+];
 
 interface BookingEmailData {
   clientName: string;
@@ -27,12 +31,12 @@ async function getResend() {
 export async function sendBookingNotification(data: BookingEmailData) {
   const resend = await getResend();
   const fromEmail = process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev";
-  const toEmail = process.env.BUSINESS_NOTIFICATION_EMAIL || BUSINESS_EMAIL;
-  console.log("[Email] Sending booking notification to:", toEmail, "from:", fromEmail);
+  const toEmails = NOTIFICATION_EMAILS;
+  console.log("[Email] Sending booking notification to:", toEmails, "from:", fromEmail);
   console.log("[Email] API key present:", !!process.env.RESEND_API_KEY);
   const { data: result, error } = await resend.emails.send({
     from: `Steve Mezzo Images <${fromEmail}>`,
-    to: toEmail,
+    to: toEmails,
     subject: `New Booking: ${data.packageName} - ${data.clientName}`,
     html: `
       <h2>New Booking Request</h2>
@@ -59,12 +63,12 @@ export async function sendBookingNotification(data: BookingEmailData) {
 export async function sendContactNotification(data: ContactEmailData) {
   const resend = await getResend();
   const fromEmail = process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev";
-  const toEmail = process.env.BUSINESS_NOTIFICATION_EMAIL || BUSINESS_EMAIL;
-  console.log("[Email] Sending contact notification to:", toEmail, "from:", fromEmail);
+  const toEmails = NOTIFICATION_EMAILS;
+  console.log("[Email] Sending contact notification to:", toEmails, "from:", fromEmail);
   console.log("[Email] API key present:", !!process.env.RESEND_API_KEY);
   const { data: result, error } = await resend.emails.send({
     from: `Steve Mezzo Images <${fromEmail}>`,
-    to: toEmail,
+    to: toEmails,
     replyTo: data.email,
     subject: `Contact Form: ${data.subject}`,
     html: `
