@@ -85,9 +85,11 @@ export async function POST(request: NextRequest) {
       .eq("id", package_id)
       .single();
 
+    console.log("[Booking] Package lookup for id:", package_id, "result:", packageData, "error:", packageError);
+
     if (packageError || !packageData || !packageData.active) {
       return NextResponse.json(
-        { error: "Invalid or inactive package" },
+        { error: "Invalid or inactive package", details: packageError?.message },
         { status: 400 }
       );
     }
@@ -124,7 +126,7 @@ export async function POST(request: NextRequest) {
       .from("blocked_dates")
       .select("id")
       .eq("blocked_date", session_date)
-      .single();
+      .maybeSingle();
 
     if (blockedDate) {
       return NextResponse.json(
